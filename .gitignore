@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-sh.exe.stackdump
+/sh.exe.stackdump
 
 # local env files
 .env.local
