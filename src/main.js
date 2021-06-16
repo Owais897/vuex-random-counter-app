@@ -5,12 +5,12 @@ import axios from "axios";
 
 const store = createStore({
     state() {
-        return {
+        return { // global state
             counter: 0,
             history: [0]
         }
     },
-    mutations: {
+    mutations: { // to update state
         addToCounter(state, payload) {
             state.counter += payload;
             state.history.push(state.counter)
@@ -20,13 +20,13 @@ const store = createStore({
             state.history.push(state.counter)
         }
     },
-    actions: {
+    actions: { //for async calls
         async addRandomNumber(context) {
             let data = await axios.get("https://www.random.org/integers/?num=1&min=-1000&max=1000&col=1&base=10&format=plain&rnd=new")
             context.commit('addToCounter', data.data)
         }
     },
-    getters: {
+    getters: { // listeners
         activeIndexes: (state) => (payload) => {
             let indexes = [];
             state.history.forEach((number, index) => {

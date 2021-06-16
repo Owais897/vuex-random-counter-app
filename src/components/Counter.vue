@@ -29,13 +29,13 @@ export default {
     computed:{
         ...mapState(["counter"])
     },
-        methods: {
-            ...mapMutations(["addToCounter", "subtractFromCounter"]),
-            ...mapActions(["addRandomNumber"])
-        },
-        mounted() {
-            console.log(this.$store.state)
-        }
+    methods: {
+        ...mapMutations(["addToCounter", "subtractFromCounter"]),
+        ...mapActions(["addRandomNumber"])
+    },
+    mounted() {
+        console.log(this.$store.state)
+    }
 }
 </script>
 
